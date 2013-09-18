@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-resource.js"></script>
+
+    <script src="app.js"></script>
+
+    <script src="directives.js"></script>
+    <script src="repositories.js"></script>
+    <script src="services.js"></script>
+    <script src="controllers.js"></script>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+</head>
+<body ng-app="application">
+
+   <div ng-controller="ApplicationController">
+       <a href="/#Start">Start</a>
+       <a href="/#Admin">Admin</a>
+
+   </div>
+   <div style="padding: 10px; " ng-view />
+</body>
+</html>
