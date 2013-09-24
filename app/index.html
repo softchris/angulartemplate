@@ -1,32 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-
-
-
+    <title>My app</title>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-resource.js"></script>
+    <script src="lib/bootstrap/angular-strap-min.js"></script>
+    <script src="lib/bootstrap/ui-bootstrap-0.5.0.js"></script>
+    <script src="lib/bootstrap/ui-bootstrap-tpls-0.5.0.js"></script>
 
     <script src="app.js"></script>
 
-    <script src="directives.js"></script>
-    <script src="repositories.js"></script>
     <script src="services.js"></script>
+    <script src="repositories.js"></script>
     <script src="controllers.js"></script>
+    <script src="models.js"></script>
 
+    <script src="directives.js"></script>
 
+    <script src="lib/jquery.js" ></script>
+    <script src="lib/bootstrap/bootstrap.js" ></script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
-
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="css/app.css" />
 </head>
 <body ng-app="application">
 
-   <div ng-controller="ApplicationController">
-       <a href="/#Start">Start</a>
-       <a href="/#Admin">Admin</a>
+    <div id="content">
+       <div  ng-controller="ApplicationController">
+           <div class="navbar navbar-inverse ">
+               <div class="navbar-inner">
+                   <div class="container">
+                        <ul class="nav">
+                            <li ng-class="getSelected('/Start')">
+                                <a href="/#Start">Start</a>
+                            </li>
+                            <li ng-class="getSelected('/Admin')">
+                                <a href="/#Admin">Admin</a>
+                            </li>
+                            <li ng-class="getSelected('/About')">
+                                <a href="/#About">About</a>
+                            </li>
 
-   </div>
-   <div style="padding: 10px; " ng-view />
+                        </ul>
+                       <div style="float:right; top: 5px">
+                           <login />
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+        <div id="view" style="padding: 10px; " ng-view />
+    </div>
 </body>
 </html>

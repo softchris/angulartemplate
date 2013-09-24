@@ -1,0 +1,10 @@
+Example - adding a route:
+For example you want to be able to go to a login page by typing /Login
+$routeProvider.when('/Login', { templateUrl: 'html/login.html', controller: 'LoginController' });
+
+Two things need to be created for this to work:
+- Create the view:  html/login.html.
+- Create the controller in controllers.js
+Creating a controller is done by first getting an instance of the correct module and then creation of
+the actual controller see 'help/adding_a_controller':
+

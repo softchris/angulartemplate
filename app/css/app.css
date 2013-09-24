@@ -1,0 +1,29 @@
+body{
+
+    background: #808080;
+}
+.navbar-inner{
+    border-radius: 0px !important;
+}
+
+#content{
+   margin: 10px;
+   border: solid 1px darkgray;
+   background: lightgray;
+    -webkit-box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 3px 10px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 3px 10px rgba(50, 50, 50, 0.75);
+}
+
+#view{
+
+
+}
+
+.error{
+    background: lightpink;
+    border: solid 1px hotpink;
+    padding: 10px;
+    border-radius: 2px;
+    margin: 5px;
+}

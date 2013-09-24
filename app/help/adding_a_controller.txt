@@ -1,0 +1,11 @@
+var controllers = angular.module('controllers'); // getting the correct module
+controllers.controller('LoginController',['$scope','userService',    // list the services that you want to inject aka use
+    function($scope,userService){
+        //mock implementation
+        $scope.user = "";
+        $scope.password = "";
+        $scope.login = function(){
+            userService.login($scope.user,$scope.password);
+        }
+    }
+]);
