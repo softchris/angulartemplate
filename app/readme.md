@@ -30,11 +30,12 @@ This will start a guide that will let you specify where the app files are, what 
 Breakdown of config file
 --------------------
 By now you have a config file but what to specify?
-"files: [
+
+    "files: [
 
     ]," , here you should list where controllers, repos, services and angular files resides
 example :
-files : [
+    files : [
             'lib/angular/angular.js',
             'lib/angular/angular-loader.js',
             'lib/angular/angular-resource.js',
@@ -47,6 +48,7 @@ files : [
             'test/**/*.js'
         ],
 
+
 autoWatch : true , this means that any change in the file will rerun the tests
 
 Your first test
@@ -54,21 +56,27 @@ Your first test
 ### Description
 
 first thing is to create the test under the test directory and start to describe it like so
-describe('testing stuff',function(){
 
-});
+    describe('testing stuff',function(){
+
+    });
+
 ### The test
 Within the 'describe' you define the test and also define an expect condition, compare it to Assert...
-it('name of test',function(){
-    expect(2).toBe(3); // false, this will fail
-});
+
+    it('name of test',function(){
+        expect(2).toBe(3); // false, this will fail
+    });
+
 
 ### Putting it altogether
-describe('testing stuff',function(){
-   it('name of test',function(){
-       expect(2).toBe(3); // false, this will fail
-   });
-});
+
+    describe('testing stuff',function(){
+       it('name of test',function(){
+           expect(2).toBe(3); // false, this will fail
+       });
+    });
+
 
 ### Running it
 karma start <name of conffile>
@@ -76,48 +84,57 @@ If you wrote everything correct you should have a failing test
 Testing a service in your app
 -------------
 ### Preload needed modules
-beforeEach(module('services'));
-beforeEach(module('models'));
-Why both these modules, well the services is needed to find the definition of the service we wish to test
-the models is needed because the service has a dependency to a model
-### Inject, aka fetch the needed service from angular
-beforeEach(inject(function(_loginService_){
-        loginService = _loginService_;
-    }));
-This is a shorthand form its also possible to write a longer version
-beforeEach(inject(function($injector){
-        loginService = $injector.get('loginService');
-}));
 
-### Putting it altogether
-describe('testing stuff',function(){
     beforeEach(module('services'));
     beforeEach(module('models'));
 
-    var loginService = null;
+Why both these modules, well the services is needed to find the definition of the service we wish to test
+the models is needed because the service has a dependency to a model
+### Inject, aka fetch the needed service from angular
 
     beforeEach(inject(function(_loginService_){
-        loginService = _loginService_;
+            loginService = _loginService_;
+        }));
+
+This is a shorthand form its also possible to write a longer version
+
+    beforeEach(inject(function($injector){
+            loginService = $injector.get('loginService');
     }));
 
-    it('noone logged in yet',function(){
+### Putting it altogether
 
-        expect(loginService.isLoggedIn()).toBe(false); // true, a user should not be logged in at start of site
+    describe('testing stuff',function(){
+        beforeEach(module('services'));
+        beforeEach(module('models'));
+
+        var loginService = null;
+
+        beforeEach(inject(function(_loginService_){
+            loginService = _loginService_;
+        }));
+
+        it('noone logged in yet',function(){
+
+            expect(loginService.isLoggedIn()).toBe(false); // true, a user should not be logged in at start of site
+        });
     });
-});
+
 Mocking
 --------------
 At some point, for example when talking to a backend, you want a mock to answer instead of the real thing.
 A way to do this is to use something called $provide, this badboy can overwrite things defined in anglar $http or
 any of your own services / factories etc..
 ### Define the mock in beforeEach
-beforeEach(module(function ($provide) {
-        // mock away userService
-        mockUserService = { getUser : function(){
-            return mockUser;
-        } };
-        $provide.value('userService', mockUserService); // overwriting the actual definition
-}));
+
+    beforeEach(module(function ($provide) {
+            // mock away userService
+            mockUserService = { getUser : function(){
+                return mockUser;
+            } };
+            $provide.value('userService', mockUserService); // overwriting the actual definition
+    }));
+
 
 
 
