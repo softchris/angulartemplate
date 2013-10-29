@@ -1,6 +1,6 @@
 <div>
     <div ng-show="loginService.isLoggedIn()">
-        <button ng-click="logout()" class="btn-link"> <strong>{{user.name}}</strong> Logout</button>
+        <button ng-click="logout()" class="btn-link"> <strong> {{user.username}}</strong><i class="icon-user"></i> Logout</button>
     </div>
     <div ng-show="!loginService.isLoggedIn()">
         <button ng-click="login()" class="btn-link">Login</button>

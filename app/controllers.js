@@ -23,6 +23,10 @@ controllers.controller('AboutController',['$scope',function($scope){
 
 }]);
 
+controllers.controller('CvController',['$scope',function($scope){
+    $scope.test = "test";
+}]);
+
 controllers.controller('LoginController',['$scope','loginService','$location',function($scope,loginService,$location){
     $scope.username="";
     $scope.password="";
