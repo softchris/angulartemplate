@@ -11,14 +11,45 @@ or
 What do you get?
 ================
 The solution consists of a fully functional angular application
+The main idea is to provide a light intro to must things angular just to get you started.
 
-A help department to get you going. Currently help for the following exist:
 Controllers
 -----------
-* Controller creation - help/adding_a_controller.txt
+A controller needs a name, its usually dependant on one or more services / factories, and it always needs a scope
+	
+	var controllers = angular.module('controllers'); // getting the correct module
+	controllers.controller('LoginController',['$scope','userService',    // list the services that you want to inject aka use
+    function($scope,userService){
+        //mock implementation
+        $scope.user = "";
+        $scope.password = "";
+        $scope.login = function(){
+            userService.login($scope.user,$scope.password);
+        }
+    }
+	]);
+
 Routes
 -----------
-* Adding a route - help/adding_route.txt
+Example - adding a route:
+For example you want to be able to go to a login page by typing /Login
+
+	$routeProvider.when('/Login', { templateUrl: 'html/login.html', controller: 'LoginController' });
+
+###Making it work
+
+	1) Create the view  
+	html/login.html.
+	2) Create the controller
+	Starting out its fine to have controllers, services etc in the same file. As it grows you need to think
+	of separating the files so you can do one of two things 
+	
+	2.1) add controller defintion to controllers.js
+	2.2) create your own controller file
+### Add script reference to entry point file 
+usually index.html (where ng-app is)
+
+
 Backend
 -----------
 * $http and $resource, how to get data from a REST service - coming
@@ -31,8 +62,9 @@ Directives
 Form validation
 ----------
 * Form validation - coming
+
 TDD - how to work better 
-------- 
+---------- 
 In able to work with TDD you need a way to write tests and also run the tests. Karma lets you do just that.
 This is a very good page that explains how it works but I have tried to simplify it
 
@@ -161,7 +193,7 @@ any of your own services / factories etc..
             mockUserService = { getUser : function(){
                 return mockUser;
             } };
-            $provide.value('userService', mockUserService); // overwriting the actual definition
+            $provide.value('userService', mockUserService); // overwriting the actual definition of userService
     }));
 
 
