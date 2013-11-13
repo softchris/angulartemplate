@@ -1,13 +1,5 @@
 var services = angular.module('services');
 
-services.factory('testService',function(){
-   return {
-      getHello : function(){
-          return "hello";
-      }
-   }
-});
-
 services.factory('loginService',function(User){
     return {
         currentUser : null,
@@ -29,8 +21,4 @@ services.factory('loginService',function(User){
             return this.currentUser != null;
         }
     }
-});
-
-services.factory('alertService',function(){
-
 });

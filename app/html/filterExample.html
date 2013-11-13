@@ -1,0 +1,48 @@
+<div>
+    <h3>
+        Search all properties
+    </h3>
+    <label for="searchFriend">Search friend</label>
+    <input type="text" id="searchFriend" ng-model="searchText" />
+
+    <table id="searchTextResults">
+        <tr><th>Name</th><th>Phone</th></tr>
+        <tr ng-repeat="friend in friends | filter:searchText">
+            <td>{{friend.name}}</td>
+            <td>{{friend.age}}</td>
+        </tr>
+    </table>
+
+    <h3>
+        Search age only
+    </h3>
+    Age only <input ng-model="search.age"><br>
+
+    <table id="searchObjResults">
+        <tr><th>Name</th><th>Phone</th></tr>
+        <tr ng-repeat="friend in friends | filter:search:strict">
+            <td>{{friend.name}}</td>
+            <td>{{friend.age}}</td>
+        </tr>
+    </table>
+
+    <h3>
+        Sortable table
+    </h3>
+
+    <table class="friend">
+        <tr>
+            <th><a href="" ng-click="predicate = 'name'; reverse=!reverse">Name</a></th>
+            <th><a href="" ng-click="predicate = 'age'; reverse=!reverse">Age</a></th>
+            <th><a href="" ng-click="predicate = 'birth'; reverse=!reverse">Birthday</a></th>
+        </tr>
+        <tr ng-repeat="friend in friends | orderBy:predicate:reverse">
+            <td>{{friend.name}}</td>
+            <td>{{friend.age}}</td>
+            <td>{{friend.birth | date: 'yyyy-MM-dd' }}</td>
+        </tr>
+    </table>
+
+
+
+</div>

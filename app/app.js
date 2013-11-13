@@ -2,6 +2,7 @@ angular.module('controllers',[]);
 angular.module('repositories',['ngResource']);
 angular.module('models',[]);
 angular.module('services',[]);
+angular.module('directives',[]);
 
 angular.module('application', ['controllers','repositories','models','services','directives'])
     .config(['$routeProvider', function ($routeProvider) {
@@ -11,6 +12,7 @@ angular.module('application', ['controllers','repositories','models','services',
         $routeProvider.when('/About', { templateUrl: 'html/about.html', controller: 'AboutController' });
         $routeProvider.when('/Login', { templateUrl: 'html/login.html', controller: 'LoginController' });
         $routeProvider.when('/CV', { templateUrl: 'html/cv.html', controller: 'CvController' });
+        $routeProvider.when('/Friends', { templateUrl: 'html/filterExample.html', controller: 'FriendsController' });
 
         $routeProvider.otherwise({ redirectTo: '/Start' });
     }]);

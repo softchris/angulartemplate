@@ -1,4 +1,4 @@
-var directives = angular.module('directives',[]);
+var directives = angular.module('directives');
 
 directives.directive('login', ['loginService','$location',function(loginService,$location){
     return {

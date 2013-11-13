@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My app</title>
+    <title>Angular Template</title>
+
+    <!-- libs -->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-resource.js"></script>
     <script src="lib/bootstrap/angular-strap-min.js"></script>
@@ -10,12 +12,27 @@
 
     <script src="app.js"></script>
 
-    <script src="services.js"></script>
-    <script src="repositories.js"></script>
-    <script src="controllers.js"></script>
-    <script src="models.js"></script>
+    <!-- services -->
+    <script src="services/alertService.js"></script>
+    <script src="services/loginService.js"></script>
+    <script src="services/testService.js"></script>
 
-    <script src="directives.js"></script>
+    <script src="repositories.js"></script>
+
+    <!-- controllers -->
+    <script src="controllers/AboutController.js" ></script>
+    <script src="controllers/AdminController.js" ></script>
+    <script src="controllers/ApplicationController.js" ></script>
+    <script src="controllers/CvController.js" ></script>
+    <script src="controllers/FriendsController.js" ></script>
+    <script src="controllers/LoginController.js" ></script>
+    <script src="controllers/StartController.js" ></script>
+
+    <!-- models -->
+    <script src="models/User.js"></script>
+
+    <!-- directives -->
+    <script src="directives/login.js"></script>
 
     <script src="lib/jquery.js" ></script>
     <script src="lib/bootstrap/bootstrap.js" ></script>
@@ -42,6 +59,9 @@
                             </li>
                             <li ng-class="getSelected('/CV')">
                                 <a href="/#CV">CV</a>
+                            </li>
+                            <li ng-class="getSelected('/Friends')">
+                                <a href="/#Friends">Friends</a>
                             </li>
 
                         </ul>
