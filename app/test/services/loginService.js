@@ -1,6 +1,6 @@
 describe('testing stuff',function(){
-    beforeEach(module('services'));
-    beforeEach(module('models'));
+    beforeEach(module('application.services'));
+    beforeEach(module('application.models'));
 
     var loginService = null;
 

@@ -4,14 +4,14 @@
         .module('application.directives')
         .directive('login', ['loginService','$location']);
 
-    Login.$inject = [ 'loginService','$location','routes' ];
+    Login.$inject = [ 'loginService','$location' ];
 
-    function Login(loginService,$location, routes){
+    function Login(loginService,$location){
         return {
             restrict: "E",
             transclude: true,
             replace: true,
-            templateUrl: '/directives/login/login.html',
+            templateUrl: '/html/directiveLogin.html',
             scope: {
 
             },
@@ -20,7 +20,7 @@
                 scope.user = loginService.currentUser;
 
                 scope.login = function(){
-                    $location.path( routes.login.route );
+                    $location.path("/Login");
                 };
 
                 scope.logout = function(){

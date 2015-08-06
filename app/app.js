@@ -1,18 +1,17 @@
-angular.module('controllers',[]);
-angular.module('repositories',['ngResource']);
-angular.module('models',[]);
-angular.module('services',[]);
-angular.module('directives',[]);
+(function(){
+	angular
+		.module('application')
+    	.config( Config );
 
-angular.module('application', ['controllers','repositories','models','services','directives'])
-    .config(['$routeProvider', function ($routeProvider) {
+	Config.$inject = ['$routeProvider','routes'];
 
-        $routeProvider.when('/Start', { templateUrl: 'html/start.html', controller: 'StartController' });
-        $routeProvider.when('/Admin', { templateUrl: 'html/admin.html', controller: 'AdminController' });
-        $routeProvider.when('/About', { templateUrl: 'html/about.html', controller: 'AboutController' });
-        $routeProvider.when('/Login', { templateUrl: 'html/login.html', controller: 'LoginController' });
-        $routeProvider.when('/CV', { templateUrl: 'html/cv.html', controller: 'CvController' });
-        $routeProvider.when('/Friends', { templateUrl: 'html/filterExample.html', controller: 'FriendsController' });
+	function Config($routeProvider, routes) {
+		for( var r in routes ){
+			var route = routes[r];
+			$routeProvider.when(route.route, { templateUrl: route.template, controller: route.controller });
+		};
+	    
+	    $routeProvider.otherwise({ redirectTo: routes.start.route });
+	}	
+})();
 
-        $routeProvider.otherwise({ redirectTo: '/Start' });
-    }]);

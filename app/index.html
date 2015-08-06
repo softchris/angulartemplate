@@ -3,43 +3,9 @@
 <head>
     <title>Angular Template</title>
 
-    <!-- libs -->
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular/angular-resource.js"></script>
-    <script src="lib/bootstrap/angular-strap-min.js"></script>
-    <script src="lib/bootstrap/ui-bootstrap-0.5.0.js"></script>
-    <script src="lib/bootstrap/ui-bootstrap-tpls-0.5.0.js"></script>
-
-    <script src="app.js"></script>
-
-    <!-- services -->
-    <script src="services/alertService.js"></script>
-    <script src="services/loginService.js"></script>
-    <script src="services/testService.js"></script>
-
-    <script src="repositories.js"></script>
-
-    <!-- controllers -->
-    <script src="controllers/AboutController.js" ></script>
-    <script src="controllers/AdminController.js" ></script>
-    <script src="controllers/ApplicationController.js" ></script>
-    <script src="controllers/CvController.js" ></script>
-    <script src="controllers/FriendsController.js" ></script>
-    <script src="controllers/LoginController.js" ></script>
-    <script src="controllers/StartController.js" ></script>
-
-    <!-- models -->
-    <script src="models/User.js"></script>
-
-    <!-- directives -->
-    <script src="directives/login.js"></script>
-
-    <script src="lib/jquery.js" ></script>
-    <script src="lib/bootstrap/bootstrap.js" ></script>
-
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/bootstrap-responsive.css" />
-    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="resources/css/bootstrap.css" />
+    <link rel="stylesheet" href="resources/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="resources/css/app.css" />
 </head>
 <body ng-app="application">
     <div id="content">
@@ -74,5 +40,44 @@
        </div>
         <div id="view" style="padding: 10px; " ng-view />
     </div>
+
+    <!-- libs -->
+    <script src="resources/lib/jquery.js" ></script>
+
+    <script src="resources/lib/angular/angular.js"></script>
+    <script src="resources/lib/angular/angular-route.js"></script>
+
+
+    <script src="resources/lib/bootstrap/bootstrap.js" ></script>
+    
+
+    <!--  bootstrapping -->
+    
+    <script src="infrastructure/bootstrap.js"></script>
+    <script src="infrastructure/routes.js"></script>
+    
+    <script src="app.js"></script>
+    <script src="infrastructure/application/login/LoginController.js" ></script>
+
+    <!-- domain -->
+    <script src="domain/services/alertService.js"></script>
+    <script src="domain/services/loginService.js"></script>
+    <script src="domain/services/testService.js"></script>
+    <script src="domain/repositories/userRepository.js"></script>
+    <script src="domain/models/User.js"></script>
+
+    <!-- features -->
+    <script src="features/about/AboutController.js" ></script>
+    <script src="features/admin/AdminController.js" ></script>
+    <script src="infrastructure/application/ApplicationController.js" ></script>
+    <script src="features/cv/CvController.js" ></script>
+    <script src="features/friends/FriendsController.js" ></script>
+    
+    <script src="features/start/StartController.js" ></script>
+
+    <!-- directives -->
+    <script src="directives/login/login.js"></script>
+
+    
 </body>
 </html>
