@@ -6,7 +6,7 @@
 
     LoginController.$inject = [ '$scope','loginService','$location','routes'];
 
-    function LoginController($scope,loginService,$location, routes){
+    function LoginController( $scope,loginService,$location, routes ){
         $scope.username="";
         $scope.password="";
         $scope.errorMessage=" Something wrong with your user credentials";

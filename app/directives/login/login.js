@@ -2,11 +2,11 @@
     'use strict';
     angular
         .module('application.directives')
-        .directive('login', ['loginService','$location']);
+        .directive('login', Login );
 
     Login.$inject = [ 'loginService','$location' ];
 
-    function Login(loginService,$location){
+    function Login( loginService,$location ){
         return {
             restrict: "E",
             transclude: true,

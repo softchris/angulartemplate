@@ -3,7 +3,7 @@
 
 	angular
 		.module('application.controllers') 
-		.controller('ApplicationController',ApplicationController );
+		.controller('ApplicationController', ApplicationController );
 
 	ApplicationController.$inject = [ '$scope','testService','$location' ];
 
@@ -20,7 +20,7 @@
 	        }
 	    }
 	}
-	
+
 })();
 
 
