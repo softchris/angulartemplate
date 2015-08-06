@@ -10,33 +10,7 @@
 <body ng-app="application">
     <div id="content">
        <div  ng-controller="ApplicationController">
-           <div class="navbar navbar-inverse ">
-               <div class="navbar-inner">
-                   <div class="container">
-                        <ul class="nav">
-                            <li ng-class="getSelected('/Start')">
-                                <a href="/#Start"><i class="icon-home"></i> Start</a>
-                            </li>
-                            <li ng-class="getSelected('/Admin')">
-                                <a href="/#Admin">Admin</a>
-                            </li>
-                            <li ng-class="getSelected('/About')">
-                                <a href="/#About">About</a>
-                            </li>
-                            <li ng-class="getSelected('/CV')">
-                                <a href="/#CV">CV</a>
-                            </li>
-                            <li ng-class="getSelected('/Friends')">
-                                <a href="/#Friends">Friends</a>
-                            </li>
-
-                        </ul>
-                       <div style="float:right; top: 5px">
-                           <login />
-                       </div>
-                   </div>
-               </div>
-           </div>
+           <menu></menu>
        </div>
         <div id="view" style="padding: 10px; " ng-view />
     </div>
@@ -58,6 +32,7 @@
     
     <script src="app.js"></script>
     <script src="infrastructure/application/login/LoginController.js" ></script>
+    <script src="infrastructure/menuService.js" ></script>
 
     <!-- domain -->
     <script src="domain/services/alertService.js"></script>
@@ -77,6 +52,7 @@
 
     <!-- directives -->
     <script src="directives/login/login.js"></script>
+    <script src="directives/menu/menu.js" ></script>
 
     
 </body>

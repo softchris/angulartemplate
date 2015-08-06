@@ -1,0 +1,14 @@
+<div class="navbar navbar-inverse ">
+   <div class="navbar-inner">
+       <div class="container">
+            <ul class="nav">
+                <li ng-repeat="item in items" ng-class="getSelected(item.route)">
+                    <a href="{{item.href}}">{{item.state}}</a>
+                </li>
+            </ul>
+           <div style="float:right; top: 5px">
+               <login />
+           </div>
+       </div>
+   </div>
+</div>

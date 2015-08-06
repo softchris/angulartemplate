@@ -18,14 +18,16 @@
             link: function (scope, element, attrs) {
                 scope.loginService = loginService;
                 scope.user = loginService.currentUser;
+                scope.logout = logout;
+                scope.login = login;
 
-                scope.login = function(){
+                function login(){
                     $location.path("/Login");
-                };
+                }
 
-                scope.logout = function(){
+                function logout(){
                     loginService.logout();
-                };
+                }
             }
         }
     }

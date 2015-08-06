@@ -1,1 +1,22 @@
-{{test}}
+<h2>{{cv.name}}</h2>
+
+<h3>Jobs</h3>
+<table class="table table-striped">
+	<tr ng-repeat="job in cv.jobs">
+		<td>
+			<h4>{{ job.name }}</h4>
+			<h5>{{ job.from }} - {{ job.to }}</h5>
+		</td>
+	</tr>
+</table>
+
+<h3>
+	Skills
+</h3>
+
+<div ng-repeat="skill in cv.skills">
+	{{ skill }} <!-- progress bar -->
+</div>
+
+
+

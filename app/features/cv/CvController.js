@@ -7,7 +7,19 @@
 	CvController.$inject = [ '$scope'];
 
 	function CvController($scope){
-		$scope.test = 'cv';	
+		$scope.cv = {
+			name : 'Chris',
+			jobs : [
+			{
+				name : 'Softhouse',
+				from : '201208',
+				to : 'present'
+			}
+			],
+			contracts : [],
+			skills : [ 'angular','.net', 'javascript', 'c#' ]
+
+		};	
 	}
 
 })();
