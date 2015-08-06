@@ -4,22 +4,12 @@
 		.module('application.controllers')
 		.controller('CVController', CvController )
 
-	CvController.$inject = [ '$scope'];
+	CvController.$inject = [ '$scope', 'cvService'];
 
-	function CvController($scope){
-		$scope.cv = {
-			name : 'Chris',
-			jobs : [
-			{
-				name : 'Softhouse',
-				from : '201208',
-				to : 'present'
-			}
-			],
-			contracts : [],
-			skills : [ 'angular','.net', 'javascript', 'c#' ]
-
-		};	
+	function CvController($scope, cvService){
+		cvService.get().then(function(result){
+			$scope.cv = angular.fromJson(result.data);
+		})	
 	}
 
 })();
