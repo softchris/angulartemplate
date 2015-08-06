@@ -11,7 +11,7 @@
             restrict: "E",
             transclude: true,
             replace: true,
-            templateUrl: '/html/directiveLogin.html',
+            templateUrl: '/directives/login/login.html',
             scope: {
 
             },
